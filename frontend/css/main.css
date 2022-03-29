@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+body {
+  background: #dddddd;
+  margin: 0;
+  font-family: 'Rubik';
+}
+
+.navbar {
+  background: white;
+  padding: 1em;
+}
+
+.navbar .logo {
+  text-decoration: none;
+  font-weight: bolder;
+  color: black;
+  font-size: 1.2em;
+}
+
+.navbar .logo span {
+  color: #e93a3a;
+}
+
+.navbar nav {
+  display: none;
+}
+
+.navbar .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+}
+
+.navbar .mobile-menu {
+  cursor: pointer;
+  max-width: 2em;
+  max-height: 2em;
+}
+
+a {
+  color: #afafaf;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 5em 2em;
+}
+
+.hero {
+  text-align: center;
+}
+
+.primary-cta {
+  background: #993c3c;
+  color: white;
+  text-decoration: none;
+  padding: .6em 1.3em;
+  font-size: 1.4em;
+  border-radius: 5em;
+}
+/*# sourceMappingURL=main.css.map */
