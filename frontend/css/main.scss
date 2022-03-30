@@ -1,25 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 body{
-    background: #dddddd;
-    margin: 0;
+    background: #dddddd ;
+    margin: 0em;
     font-family: 'Rubik';
 }
+.wrapper{
+    background: rgb(207, 58, 53) ;
+    border-radius: 0em 0em 3em 3em;
 
+}
 .navbar{
-    background: white;
     padding: 1em;
-
-    .logo {
-        text-decoration: none;
-        font-weight: bolder;
-        color: black;
-        font-size: 1.2em;
-
-        span{
-            color:#e93a3a
-        }
-    }
     
     nav{
         display:none;
@@ -31,6 +23,7 @@ body{
     }
 
     .mobile-menu{
+        filter: invert(100%);
         cursor: pointer;
         max-width: 2em;
         max-height: 2em;
@@ -56,9 +49,22 @@ section{
 }
 
 .hero{
-    text-align: center;
+    text-align: left;
+    padding: 0em 2em 5em;
 }
 
+h1{
+color: white;
+font-size: 2em;
+margin: 0em 0em 5px;
+}
+.subhead{
+color: white;
+margin:0em 0em 2em 0em;
+padding: 0em 20em 0em 0em;
+
+
+}
 .primary-cta{
     background: rgb(153, 60, 60);
     color: white;
@@ -66,6 +72,14 @@ section{
     padding: .6em 1.3em;
     font-size: 1.4em;
     border-radius: 5em;
+}
+
+.info-left {
+    background: white;
+    margin: 9px;
+    border-radius: 2em;
+
+
 }
 
 
