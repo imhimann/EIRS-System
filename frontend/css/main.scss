@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 body{
     background: #dddddd ;
     margin: 0em;
     font-family: 'Rubik';
+
 
 }
 .wrapper{
@@ -94,6 +96,7 @@ section{
 }
 
 .hero{
+    animation: introLoad 2s forwards;
     text-align: left;
     padding: 0em 2em 5em;
     
@@ -129,7 +132,7 @@ section{
         text-decoration: none;
         padding: .6em 1.3em;
         font-size: 1.4em;
-        border-radius: 5em;
+        border-radius: 10px;
     }
 }
 
@@ -137,7 +140,66 @@ section{
     background: white;
     margin: 9px;
     border-radius: 2em;
+    animation: introLoad 1s forwards;
 
+
+}
+
+.feature {
+    margin-top: -3em;
+    display: flex;
+    place-content: space-between;
+   
+    
+    .content-1 {
+        background: #c3f7d2;
+        font-family: 'Josefin Sans';
+        font-weight: bold;
+        text-align: left;
+        width: 17em;
+        height: 7em;
+        border-radius: 1.5em;
+    }
+
+    .content-2 {
+        background: #f3d0fa;
+        text-align: left;
+        font-family: 'Josefin Sans';
+        font-weight: bold;
+        width: 17em;
+        height: 7em;
+        border-radius: 1.5em;
+    }
+
+    .title{
+        padding: 0em 9em 0em 1em;
+    }
+
+    .title-2{
+        padding: 0em 9em 0em 1em;
+    }
+
+    .map {
+        padding: 5px 60px 5px 9px;
+        margin: 0em 1em;
+        border-radius: 10px 0px 10px 0px;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: lighter;
+        color: white;
+        background: #6abe82;
+    }
+
+    .near-me {
+        padding: 5px 60px 5px 9px;
+        margin: 0em 1em;
+        border-radius: 10px 0px 10px 0px;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: lighter;
+        color: white;
+        background: #a04bb1;
+    }
 
 }
 
@@ -186,9 +248,47 @@ section{
         }
     }
 
-
-
-
+    .feature {
+        margin-top: -3em;
+        display: block;
+        
+       
+        
+        .content-1 {
+            background: #c3f7d2;
+            font-family: 'Josefin Sans';
+            font-weight: bold;
+            text-align: left;
+            width: auto;
+            height: 7em;
+            border-radius: 1.5em;
+        }
+    
+        .content-2 {
+            background: #f3d0fa;
+            text-align: left;
+            font-family: 'Josefin Sans';
+            font-weight: bold;
+            width: auto;
+            height: 7em;
+            border-radius: 1.5em;
+        }
+        .title{
+            padding: 1em 9em 0em 1em;
+        }
+    
+        .title-2{
+            padding: 1em 9em 0em 1em;
+        }
+    }
 
 }
 
+@keyframes introLoad{
+    from{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
