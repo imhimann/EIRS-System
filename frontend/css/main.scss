@@ -12,6 +12,7 @@ body{
     background-image: linear-gradient(rgb(225, 112, 112),rgb(205, 69, 69)) ;
     border-radius: 0em 0em 3em 3em;
     box-shadow: 0px 2px 5px #878787;
+    height: 40em;
 
 
 }
@@ -137,8 +138,10 @@ section{
 }
 
 .info-left {
+
     background: white;
     margin: 9px;
+    margin-top: -12em;
     border-radius: 2em;
     animation: introLoad 1s forwards;
 
@@ -215,6 +218,16 @@ section{
         font-family: 'Rubik';
     
     }
+    .info-left {
+
+        background: white;
+        margin: 9px;
+        margin-top: -16em;
+        border-radius: 2em;
+        animation: introLoad 1s forwards;
+    
+    
+    }
 }
 
 @media only screen and (min-width: 920px){
@@ -246,6 +259,17 @@ section{
                 }
             }
         }
+    }
+
+    .info-left {
+
+        background: white;
+        margin: 9px;
+        margin-top: -20em;
+        border-radius: 2em;
+        animation: introLoad 1s forwards;
+    
+    
     }
 
     .feature {

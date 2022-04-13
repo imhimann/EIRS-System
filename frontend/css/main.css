@@ -12,6 +12,7 @@ body {
   border-radius: 0em 0em 3em 3em;
   -webkit-box-shadow: 0px 2px 5px #878787;
           box-shadow: 0px 2px 5px #878787;
+  height: 40em;
 }
 
 .navbar {
@@ -137,6 +138,7 @@ section {
 .info-left {
   background: white;
   margin: 9px;
+  margin-top: -12em;
   border-radius: 2em;
   -webkit-animation: introLoad 1s forwards;
           animation: introLoad 1s forwards;
@@ -213,6 +215,14 @@ section {
     margin: 1.5em 5em;
     font-family: 'Rubik';
   }
+  .info-left {
+    background: white;
+    margin: 9px;
+    margin-top: -16em;
+    border-radius: 2em;
+    -webkit-animation: introLoad 1s forwards;
+            animation: introLoad 1s forwards;
+  }
 }
 
 @media only screen and (min-width: 920px) {
@@ -242,6 +252,14 @@ section {
   }
   nav ul a:hover {
     background: #bb2722;
+  }
+  .info-left {
+    background: white;
+    margin: 9px;
+    margin-top: -20em;
+    border-radius: 2em;
+    -webkit-animation: introLoad 1s forwards;
+            animation: introLoad 1s forwards;
   }
   .feature {
     margin-top: -3em;
