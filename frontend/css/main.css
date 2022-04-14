@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 body {
   background: #dddddd;
   margin: 0em;
@@ -6,10 +7,12 @@ body {
 }
 
 .wrapper {
-  background: #e2524d;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e17070), to(#cd4545));
+  background-image: linear-gradient(#e17070, #cd4545);
   border-radius: 0em 0em 3em 3em;
   -webkit-box-shadow: 0px 2px 5px #878787;
           box-shadow: 0px 2px 5px #878787;
+  height: 40em;
 }
 
 .navbar {
@@ -91,6 +94,8 @@ section {
 }
 
 .hero {
+  -webkit-animation: introLoad 2s forwards;
+          animation: introLoad 2s forwards;
   text-align: left;
   padding: 0em 2em 5em;
 }
@@ -127,13 +132,74 @@ section {
   text-decoration: none;
   padding: .6em 1.3em;
   font-size: 1.4em;
-  border-radius: 5em;
+  border-radius: 10px;
 }
 
 .info-left {
   background: white;
   margin: 9px;
+  margin-top: -12em;
   border-radius: 2em;
+  -webkit-animation: introLoad 1s forwards;
+          animation: introLoad 1s forwards;
+}
+
+.feature {
+  margin-top: -3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+}
+
+.feature .content-1 {
+  background: #c3f7d2;
+  font-family: 'Josefin Sans';
+  font-weight: bold;
+  text-align: left;
+  width: 17em;
+  height: 7em;
+  border-radius: 1.5em;
+}
+
+.feature .content-2 {
+  background: #f3d0fa;
+  text-align: left;
+  font-family: 'Josefin Sans';
+  font-weight: bold;
+  width: 17em;
+  height: 7em;
+  border-radius: 1.5em;
+}
+
+.feature .title {
+  padding: 0em 9em 0em 1em;
+}
+
+.feature .title-2 {
+  padding: 0em 20em 0em 1em;
+}
+
+.feature .map {
+  padding: 5px 60px 5px 9px;
+  margin: 0em 1em;
+  border-radius: 10px 0px 10px 0px;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: lighter;
+  color: white;
+  background: #6abe82;
+}
+
+.feature .near-me {
+  padding: 5px 60px 5px 9px;
+  margin: 0em 1em;
+  border-radius: 10px 0px 10px 0px;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: lighter;
+  color: white;
+  background: #a04bb1;
 }
 
 .open-nav {
@@ -148,6 +214,14 @@ section {
     background: #dddddd;
     margin: 1.5em 5em;
     font-family: 'Rubik';
+  }
+  .info-left {
+    background: white;
+    margin: 9px;
+    margin-top: -16em;
+    border-radius: 2em;
+    -webkit-animation: introLoad 1s forwards;
+            animation: introLoad 1s forwards;
   }
 }
 
@@ -178,6 +252,64 @@ section {
   }
   nav ul a:hover {
     background: #bb2722;
+  }
+  .info-left {
+    background: white;
+    margin: 9px;
+    margin-top: -20em;
+    border-radius: 2em;
+    -webkit-animation: introLoad 1s forwards;
+            animation: introLoad 1s forwards;
+  }
+  .feature {
+    margin-top: -3em;
+    display: block;
+  }
+  .feature .content-1 {
+    background: #c3f7d2;
+    font-family: 'Josefin Sans';
+    font-weight: bold;
+    text-align: left;
+    width: auto;
+    height: 7em;
+    border-radius: 1.5em;
+  }
+  .feature .content-2 {
+    background: #f3d0fa;
+    text-align: left;
+    font-family: 'Josefin Sans';
+    font-weight: bold;
+    width: auto;
+    height: 7em;
+    border-radius: 1.5em;
+  }
+  .feature .title {
+    padding: 1em 9em 0em 1em;
+  }
+  .feature .title-2 {
+    padding: 1em 9em 0em 1em;
+  }
+}
+
+@-webkit-keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 /*# sourceMappingURL=main.css.map */
