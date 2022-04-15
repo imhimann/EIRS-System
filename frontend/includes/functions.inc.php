@@ -1,44 +1,28 @@
 <?php
 
 function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) {
-    
-    $result = false;
-    if (empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdRepeat)) {
-        $result = true;
-    
-    return $result;
-    }
+
+    return (empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdRepeat));
 }
+
 
 function invalidUsername($username) {
 
-    $result = false;
-    if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
-        $result = true;
-    
-    return $result;
-    }
+    return (!preg_match("/^[a-zA-Z0-9]*$/", $username));
 }
 
+
 function invalidEmail($email) {
-    
-    $result = false;
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $result = true;
-    
-    return $result;
-    }
+
+    return (!filter_var($email, FILTER_VALIDATE_EMAIL));
 }
+
 
 function mismatchedPassword($pwd, $pwdRepeat) {
     
-    $result = false;
-    if ($pwd !== $pwdRepeat) {
-        $result = true;
-    
-    return $result;
-    }
+    return ($pwd !== $pwdRepeat);
 }
+
 
 function usernameExists($conn, $username, $email) {
 
@@ -65,6 +49,7 @@ function usernameExists($conn, $username, $email) {
     mysqli_stmt_close($stmt);
 }
 
+
 function createUser($conn, $name, $email, $username, $pwd) {
 
     $sql = "INSERT INTO users (usersName, usersEmail, usersUsername, usersPassword) VALUES (?, ?, ?, ?);";
@@ -86,15 +71,12 @@ function createUser($conn, $name, $email, $username, $pwd) {
     exit();
 }
 
+
 function emptyInputLogin($username, $pwd) {
     
-    $result = false;
-    if (empty($username) || empty($pwd)) {
-        $result = true;
-    
-    return $result;
-    }
+    return (empty($username) || empty($pwd));
 }
+
 
 function loginUser($conn, $username, $pwd) {
     $usernameExists = usernameExists($conn, $username, $username);

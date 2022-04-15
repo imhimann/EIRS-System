@@ -4,13 +4,19 @@ ReportList = []
 
 class Report:
     
-    def __init__(self, incident, time, location, description, status):
+    def __init__(self, incident, time, location, description, status, index):
         self.incident = incident
         self.time = time
         self.location = location
         self.description = description
-        self.status= status
+        self.status = status
+        self.index = index
         #self.account = account
+        
+        
+    def printDetailedReport (self):
+        print ("Incident: ", self.incident, "\nTime: ", self.time, "\nLocation: ", self.location,
+               "\nDescription: ", self.description, "\nStatus: ", self.status, "\nIndex: ", self.index)
     
     def printActiveIncident(self):
         
@@ -41,11 +47,17 @@ def inputReport(ReportList):
     
     status = "active"
     #account = 
+    index = len(ReportList) - 1
     
-    ReportList.append(Report(incident, time, location, description, status))
+    ReportList.append(Report(incident, time, location, description, status, index))
     return ReportList
     
     
+def updateReport(ReportList):
+    ref = print ("Please input the reference of the incident")
+    
+    pass
+
 def contactList():
     print ("1: Ambulance 991")
     print ("2: Police 993")
@@ -81,7 +93,7 @@ while select != 5:
     if select == 1:
         ReportList = inputReport(ReportList)
         print (ReportList[-1].incident, " reported")
-        print ("Incident reported at ", ReportList[-1].time )
+        print ("Incident reported at ", ReportList[-1].time, "\n" )
         
     elif select == 2:
         viewMenu()
@@ -95,4 +107,3 @@ while select != 5:
     
     else:
         print ("Exit")
-
