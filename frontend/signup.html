@@ -5,9 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+    <link rel="stylesheet" href="css/accounts.css">
 </head>
 <body>
-    <section>
+    
+    <div class="wrapper"></div>
+    
+    <div class="container">
+        <form action="signup.inc.php" method="post">
+            <h1 class="title">Create an Account</h1>
+            <div class="form-input-group">
+                <p>Username</p>
+                <input type="username" class="form-name" autofocus placeholder="Username">
+                <p>Email</p>
+                <input type="email" class="form-email" autofocus placeholder="Email">
+                <div class="form-input-error"></div>
+            </div>
+            <div class="form-input-password">
+                <p>Password</p>
+                <input type="password" class="form-password" autofocus placeholder="Password">
+                <p>Repeat Password</p>
+                <input type="password" class="form-rptpassword" autofocus placeholder="Repeat Password">
+                <div class="form-input-error"></div>
+            </div>
+
+            <button class="submit" type="submit">Sign Up</button>
+
+
+
+        </form>
+
+    </div>
+    
+    
+    
+    <!-- <section>
         <h2>Sign Up</h2>
         <form action="test.php" method="post">
             <input type="text" name="name" placeholder="Full Name">
@@ -23,6 +55,6 @@
             <button type="submit" name="submit">Sign up</button>
         </form>
 
-    </section>
+    </section> -->
 </body>
 </html>
