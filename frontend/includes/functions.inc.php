@@ -1,8 +1,8 @@
 <?php
 
-function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) {
+function emptyInputSignup($username, $email, $pwd, $pwdRepeat) {
 
-    return (empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdRepeat));
+    return (empty($username) || empty($email) || empty($pwd) || empty($pwdRepeat));
 }
 
 
@@ -50,9 +50,9 @@ function usernameExists($conn, $username, $email) {
 }
 
 
-function createUser($conn, $name, $email, $username, $pwd) {
+function createUser($conn, $username, $email, $pwd) {
 
-    $sql = "INSERT INTO users (usersName, usersEmail, usersUsername, usersPassword) VALUES (?, ?, ?, ?);";
+    $sql = "INSERT INTO users (usersName, usersEmail, usersPassword) VALUES (?, ?, ?);";
     // initialize a prepared statement 
     $stmt = mysqli_stmt_init($conn);
 
@@ -63,7 +63,7 @@ function createUser($conn, $name, $email, $username, $pwd) {
 
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $hashedPwd);
+    mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
