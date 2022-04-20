@@ -133,6 +133,9 @@ ul{
 
 @media only screen and (min-width: 920px){
 
+    .wrapper{
+        height: 10em;
+    }
     .mobile-menu{
         display: none;
     }
@@ -161,4 +164,8 @@ ul{
             }
         }
     }
-}
+
+    .hero{
+        margin: -5em 5px 0em 5px;
+    }
+}   
