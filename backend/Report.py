@@ -20,7 +20,7 @@ class Report:
         
     
 
-
+#Report Details on Incedent, Time, location, descrition, status and reference
 def printDetails(Report):
     
     print ("Incident: ", Report.incident, "\nTime: ", Report.time, "\nLocation: ", Report.location,
@@ -91,7 +91,7 @@ def searchReports(ReportList, tag, search):
         
     
 
-
+#template on contact list can only be access through terminal
 def contactList():
     print ("1: Ambulance 991")
     print ("2: Police 993")
@@ -102,7 +102,7 @@ def contactList():
     input("select a number: ")
     print("calling...")
     
-    
+#template for Menu    
 def viewMenu():
     
     tag = 0
