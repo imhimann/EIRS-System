@@ -93,12 +93,7 @@ def searchReports(ReportList, tag, search):
 
 #template on contact list can only be access through terminal
 def contactList():
-    print ("1: Ambulance 991")
-    print ("2: Police 993")
-    print ("3: Fire Fighter 995")
-    print ("4: Search and Rescue 998")
-    print ("5: Exit Menu")
-    
+    print ("1: Ambulance 991\n2: Police 993\n3: Fire Fighter 995\n4: Search and Rescue 998\n5: Exit Menu")
     input("select a number: ")
     print("calling...")
     
