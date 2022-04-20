@@ -94,8 +94,6 @@ section {
 }
 
 .hero {
-  -webkit-animation: introLoad 2s forwards;
-          animation: introLoad 2s forwards;
   text-align: left;
   padding: 0em 2em 5em;
 }
@@ -140,8 +138,6 @@ section {
   margin: 9px;
   margin-top: -12em;
   border-radius: 2em;
-  -webkit-animation: introLoad 1s forwards;
-          animation: introLoad 1s forwards;
 }
 
 .feature {
@@ -220,8 +216,6 @@ section {
     margin: 9px;
     margin-top: -16em;
     border-radius: 2em;
-    -webkit-animation: introLoad 1s forwards;
-            animation: introLoad 1s forwards;
   }
 }
 
@@ -258,8 +252,6 @@ section {
     margin: 9px;
     margin-top: -20em;
     border-radius: 2em;
-    -webkit-animation: introLoad 1s forwards;
-            animation: introLoad 1s forwards;
   }
   .feature {
     margin-top: -3em;
@@ -288,28 +280,6 @@ section {
   }
   .feature .title-2 {
     padding: 1em 9em 0em 1em;
-  }
-}
-
-@-webkit-keyframes introLoad {
-  from {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-  }
-  to {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-}
-
-@keyframes introLoad {
-  from {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-  }
-  to {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 /*# sourceMappingURL=main.css.map */
