@@ -1,32 +1,31 @@
 from datetime import datetime
 
-ReportList = []
-
 class Report:
     
-    def __init__(self, incident, time, location, description, status, index):
+    def __init__(self, incident, time, location, description, status, reference):
         self.incident = incident
         self.time = time
         self.location = location
         self.description = description
         self.status = status
-        self.index = index
+        self.reference = reference
         #self.account = account
         
         
-    def printDetailedReport (self):
-        print ("Incident: ", self.incident, "\nTime: ", self.time, "\nLocation: ", self.location,
-               "\nDescription: ", self.description, "\nStatus: ", self.status, "\nIndex: ", self.index)
     
-    def printActiveIncident(self):
+
+    def updateReport(self, description, status):
+        self.description = description
+        self.status = status
         
-        pass
     
-    def searchIncident(self):
-        
-        pass
-        
-        
+
+#Report Details on Incedent, Time, location, descrition, status and reference
+def printDetails(Report):
+    
+    print ("Incident: ", Report.incident, "\nTime: ", Report.time, "\nLocation: ", Report.location,
+           "\nDescription: ", Report.description, "\nStatus: ", Report.status, "\nReference: ", Report.reference, "\n")
+    
 
 def displayMenu():
     print ("1: Report Incident")
@@ -47,40 +46,147 @@ def inputReport(ReportList):
     
     status = "active"
     #account = 
-    index = len(ReportList) - 1
+    reference = len(ReportList) + 1
     
-    ReportList.append(Report(incident, time, location, description, status, index))
+    ReportList.append(Report(incident, time, location, description, status, reference))
     return ReportList
     
+def searchByActive(ReportList):
+    onGoing = [report for report in ReportList if report.status == "active"]
     
-def updateReport(ReportList):
-    ref = print ("Please input the reference of the incident")
-    
-    pass
+    if onGoing == None:
+        print("Active cases not found")
+    else:    
+        for report in onGoing:
+            printDetails(report)
+        
 
-def contactList():
-    print ("1: Ambulance 991")
-    print ("2: Police 993")
-    print ("3: Fire Fighter 995")
-    print ("4: Search and Rescue 998")
-    print ("5: Exit Menu")
+
+def searchReports(ReportList, tag, search):
     
-    input("select a nuumber: ")
+    if tag == 1:  # 1 is by incident name
+        fetchReport = [report for report in ReportList if report.incident == search]
+    
+    elif tag == 2: # 2 is by location
+        fetchReport = [report for report in ReportList if report.location == search]
+        
+    elif tag == 3: # 3 is by status
+        fetchReport = [report for report in ReportList if report.status == search]
+    
+    elif tag == 4: # 4 is by reference (for the authorities)
+        fetchReport = [report for report in ReportList if report.reference == search]
+        
+    else: # 5 or default is search everything
+        fetchReport = [report for report in ReportList]
+      
+        
+    # printing the found results  
+    
+    if not fetchReport: # check if result is empty
+        print ("Incident not found\n")
+    else:
+        for report in fetchReport:
+            printDetails (report)
+        
+        
+    
+
+#template on contact list can only be access through terminal
+def contactList():
+    print ("1: Ambulance 991\n2: Police 993\n3: Fire Fighter 995\n4: Search and Rescue 998\n5: Exit Menu")
+    input("select a number: ")
     print("calling...")
     
-    
+#template for Menu    
 def viewMenu():
-    print ("1: View latest incident")
-    print ("2: View on-going report")
-    print ("3: View specific incident")
-    print ("4: View regional incident ")
-    print ("5: Exit ")
+    
+    tag = 0
+    while tag != 5:
+    
+        print ("Search Menu\n")
+        
+        print ("1: View specific incidents")
+        print ("2: View incidents in location")
+        print ("3: View on going incidents")
+        print ("4: View all incidents ")
+        print ("5: Exit ")
+    
+        tag = int(input("select a number: "))
+        
+        if tag == 1:
+            search = input("Search Incident: ")
+            print ("Searching incidents\n")
+            searchReports(ReportList, tag, search)
+            print ("Search finished\n")
+            
+            input("Press Enter to continue...")
+            
+            
+        elif tag == 2:
+            search = input ("Search by location: ")
+            print ("Searching incidents in ", search, "\n")
+            searchReports (ReportList, tag, search)
+            print ("Search finished\n") 
+            
+            input("Press Enter to continue...")
+            
+            
+        elif tag == 3:
+            print ("Searching on-going incidents\n")
+            searchReports(ReportList, tag, "active")
+            print ("Search finished\n")
+            
+            input("Press Enter to continue...")
+            
+            
+        elif tag == 4:
+            print ("Searching on-going incidents\n")
+            searchReports(ReportList, 5, None)
+            print ("Search finished\n")
+            
+            input("Press Enter to continue...")
+            
+        else:
+            print ("Exiting\n")
 
+
+
+def updateMenu():
+    
+    
+    password = input ("Enter Authority Password to access incident updater: ")
+    
+    if password == "password":
+        ref = int(input("Enter incident reference number: "))
+        
+        searchReports(ReportList, 4, ref)
+        
+        answer = input("update this report? y/n: ")
+        
+        if answer == 'y':
+            
+            updatedDesc = input ("add in description: ")
+            answer2 = input("Change incident status to closed? y/n: ")
+            
+            if answer2 == 'y':
+                ReportList[ref].updateReport(updatedDesc, "closed")
+                print ("Report updated. case closed")
+            else:
+                ReportList[ref].updateReport(updatedDesc, "active")
+                print ("Report updated. Case status remains on-going")
+            
+            
+        else:
+            print ("Report not changed\n")
+        
+        
+    else:
+        print ("Password incorrect, exiting updater\n")
+        
     
 
 
-
-
+ReportList = []
 
 
 
@@ -93,17 +199,24 @@ while select != 5:
     if select == 1:
         ReportList = inputReport(ReportList)
         print (ReportList[-1].incident, " reported")
-        print ("Incident reported at ", ReportList[-1].time, "\n" )
+        print ("Incident reported at ", ReportList[-1].time,
+               "\nIncident Reference: ", ReportList[-1].reference, "\n" )
+        
+        input("Press Enter to continue...")
         
     elif select == 2:
         viewMenu()
-        print ("view")
+
         
     elif select == 3:
         contactList()
         
+        input("Press Enter to continue...")
+        
     elif select == 4:
         print("update")
+        updateMenu()
+        input("Press Enter to continue...")
     
     else:
         print ("Exit")
