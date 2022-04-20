@@ -97,6 +97,13 @@ function loginUser($conn, $username, $pwd) {
     session_start();
     $_SESSION["userId"] = $usernameExists["usersId"];
     $_SESSION["userUsername"] = $usernameExists["usersUsername"];
-    header("location: ../index.php");
+    header("location: ../homepage.html");
     exit();
+}
+
+function emptyInputReport($incident, $location, $description) {
+    return (empty($incident) || empty($location) || empty($description));
+}
+function createReport($conn, $incident, $location, $description) {
+    $sql = "INSERT INTO reports (usersName, usersEmail, usersPassword) VALUES (?, ?, ?);";
 }
