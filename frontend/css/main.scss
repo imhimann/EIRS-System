@@ -97,7 +97,6 @@ section{
 }
 
 .hero{
-    animation: introLoad 2s forwards;
     text-align: left;
     padding: 0em 2em 5em;
     
@@ -143,7 +142,6 @@ section{
     margin: 9px;
     margin-top: -12em;
     border-radius: 2em;
-    animation: introLoad 1s forwards;
 
 
 }
@@ -224,7 +222,6 @@ section{
         margin: 9px;
         margin-top: -16em;
         border-radius: 2em;
-        animation: introLoad 1s forwards;
     
     
     }
@@ -267,7 +264,6 @@ section{
         margin: 9px;
         margin-top: -20em;
         border-radius: 2em;
-        animation: introLoad 1s forwards;
     
     
     }
@@ -306,13 +302,4 @@ section{
         }
     }
 
-}
-
-@keyframes introLoad{
-    from{
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
-    to{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
 }

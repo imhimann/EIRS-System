@@ -16,6 +16,11 @@ class ReportContr extends Report {
         $this->status = $status;
     }
 
+    public function updateReport($description, $status) {
+        $this->description = $description;
+        $this->status = $status;
+    }
+
     public function submitReport() {
         if($this->emptyInput() !== false) {
             header("location: ../report.php?error=emptyinput");
@@ -24,6 +29,7 @@ class ReportContr extends Report {
 
         $this->setReport($this->incident, $this->location, $this->description, $this->time, $this->status);
     }
+    
     
     
     private function emptyInput() {

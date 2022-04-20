@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+body {
+  background: #dddddd;
+  margin: 0em;
+  font-family: 'Rubik';
+}
+
+.wrapper {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e17070), to(#cd4545));
+  background-image: linear-gradient(#e17070, #cd4545);
+  border-radius: 0em 0em 3em 3em;
+  -webkit-box-shadow: 0px 2px 5px #878787;
+          box-shadow: 0px 2px 5px #878787;
+  height: 20em;
+}
+
+.navbar {
+  padding: 0em;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 40%;
+  padding: 0;
+  background: white;
+  z-index: 999;
+  text-transform: uppercase;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+}
+
+nav .mobile-menu-exit {
+  -webkit-filter: invert(0%);
+          filter: invert(0%);
+  cursor: pointer;
+  margin: 1em;
+  max-width: 2em;
+  max-height: 2em;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 4em;
+}
+
+nav ul a {
+  color: black;
+  padding: .75em 1em;
+  display: block;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+nav ul a:hover {
+  background: #d0d0d0;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+}
+
+.mobile-menu {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  cursor: pointer;
+  margin: 1em;
+  max-width: 2em;
+  max-height: 2em;
+}
+
+a {
+  color: #afafaf;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  background-color: white;
+  border-radius: 10px;
+  margin: -14em 5px 0em 5px;
+}
+
+.hero .help-sect {
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hero span {
+  padding: 0em 1rem;
+}
+
+.hero .police {
+  background-color: #8f7eff70;
+  border-radius: 40px 0px 40px 0px;
+  margin: 20px;
+}
+
+.hero .ambulance {
+  background-color: #ff7e7e7b;
+  border-radius: 40px 0px 40px 0px;
+  margin: 20px;
+}
+
+.hero .firefighter {
+  background-color: #ffb67e5c;
+  border-radius: 40px 0px 40px 0px;
+  margin: 20px;
+}
+
+.hero img {
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 2px 5px #00000063;
+          box-shadow: 0px 2px 5px #00000063;
+  max-width: 8em;
+  max-height: 8em;
+}
+
+.open-nav {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-box-shadow: 1em 1em 5em #00000059;
+          box-shadow: 1em 1em 5em #00000059;
+}
+
+@media only screen and (min-width: 920px) {
+  .mobile-menu {
+    display: none;
+  }
+  nav {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    position: unset;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  nav .mobile-menu-exit {
+    display: none;
+  }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+  }
+  nav ul a {
+    color: white;
+  }
+  nav ul a:hover {
+    background: #bb2722;
+  }
+}
+/*# sourceMappingURL=help.css.map */
