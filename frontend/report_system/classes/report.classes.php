@@ -2,7 +2,7 @@
 
 class Report extends Dbh {
 
-    //create report
+    //create report 
     protected function setReport($incident, $location, $description, $time, $status) {
         // prepare an sql statement to be queried
         $sql = "INSERT INTO reports (report_incident, report_location, report_description, 
@@ -15,6 +15,26 @@ class Report extends Dbh {
             header("location: ../report.php?error=stmtfailed");
             exit();
         }
+    }
+
+    protected function searchByActiveOrClosed($status) {
+        $sql = "SELECT * FROM reports WHERE report_status = ?;";
+        $stmt = $this->connect()->prepare($sql);
+
+        if(!$stmt->execute(array($status))) {
+            $stmt = null;
+            header("location: ../report.php?error=stmtfailed");
+            exit();
+        }
+
+        if($stmt->rowCount() == 0) {
+            $stmt = null;
+            header("location: ../report.php?error=notfound");
+            exit();
+        }
+        
+        $user = $stmt->fetchAll(PDO::FETCH_ASSOC); // get result from sql query
+
     }
 
 }

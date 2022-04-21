@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,24 +14,9 @@
     <body>
 
         <div class="wrapper">
-            <div class="navbar">
-                
-                <div class="container">
-
-                    <img id="mobile-cta" class="mobile-menu" src="assets/menu-icon.svg" alt="Open Navigation">
-
-                    <nav>
-                        
-                        <img id="mobile-exit" class="mobile-menu-exit" src="assets/menu-exit.svg" alt="Close Navigation">
-
-                        <ul class="primary-nav">
-                            <li class="help"><a href="help.html">Help</a></li>
-                            <li><a href="account_system/login.php">Account</a></li>
-                            <li class="report-cta"><a href="report_system/report.php">Report</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+            <?php
+                include_once "header.php";
+            ?>
 
             <section class="hero">
                 <img class="background" src="" alt="">

@@ -4,5 +4,5 @@ session_start();
 session_unset();
 session_destroy();
 
-header("location: ../homepage.html");
+header("location: ../../homepage.php");
 exit(); 
