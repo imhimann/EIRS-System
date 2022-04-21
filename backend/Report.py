@@ -14,13 +14,13 @@ class Report:
         
     
 
-    def updateReport(self, description, status):
-        self.description = description
+    def updateReport(self, description2, status):
+        self.description = (self.description +" \n          Update: " + description2)
         self.status = status
         
     
 
-#Report Details on Incedent, Time, location, descrition, status and reference
+
 def printDetails(Report):
     
     print ("Incident: ", Report.incident, "\nTime: ", Report.time, "\nLocation: ", Report.location,
@@ -91,13 +91,18 @@ def searchReports(ReportList, tag, search):
         
     
 
-#template on contact list can only be access through terminal
+
 def contactList():
-    print ("1: Ambulance 991\n2: Police 993\n3: Fire Fighter 995\n4: Search and Rescue 998\n5: Exit Menu")
+    print ("1: Ambulance 991")
+    print ("2: Police 993")
+    print ("3: Fire Fighter 995")
+    print ("4: Search and Rescue 998")
+    print ("5: Exit Menu")
+    
     input("select a number: ")
     print("calling...")
     
-#template for Menu    
+    
 def viewMenu():
     
     tag = 0
@@ -169,10 +174,10 @@ def updateMenu():
             answer2 = input("Change incident status to closed? y/n: ")
             
             if answer2 == 'y':
-                ReportList[ref].updateReport(updatedDesc, "closed")
+                ReportList[ref-1].updateReport(updatedDesc, "closed")
                 print ("Report updated. case closed")
             else:
-                ReportList[ref].updateReport(updatedDesc, "active")
+                ReportList[ref-1].updateReport(updatedDesc, "active")
                 print ("Report updated. Case status remains on-going")
             
             
