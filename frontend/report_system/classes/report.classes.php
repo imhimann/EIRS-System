@@ -17,4 +17,24 @@ class Report extends Dbh {
         }
     }
 
+    protected function searchByActiveOrClosed($status) {
+        $sql = "SELECT * FROM reports WHERE report_status = ?;";
+        $stmt = $this->connect()->prepare($sql);
+
+        if(!$stmt->execute(array($status))) {
+            $stmt = null;
+            header("location: ../report.php?error=stmtfailed");
+            exit();
+        }
+
+        if($stmt->rowCount() == 0) {
+            $stmt = null;
+            header("location: ../report.php?error=notfound");
+            exit();
+        }
+        
+        $user = $stmt->fetchAll(PDO::FETCH_ASSOC); // get result from sql query
+
+    }
+
 }
