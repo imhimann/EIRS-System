@@ -42,7 +42,7 @@
             <div class="feature">
                 <div class="content-1">
                     <p class="title"> Emergency Map</p>
-                    <a href="#" class="map">Open Map</a>
+                    <a href="EIRS_Map/index.html" class="map">Open Map</a>
                 </div>
                 <div class="content-2">
                     <p class="title-2">Quick Dial</p>
