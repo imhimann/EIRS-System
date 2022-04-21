@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,11 +24,32 @@
                         
                         <img id="mobile-exit" class="mobile-menu-exit" src="assets/menu-exit.svg" alt="Close Navigation">
 
-                        <ul class="primary-nav">
-                            <li class="help"><a href="help.html">Help</a></li>
-                            <li><a href="account_system/login.php">Account</a></li>
-                            <li class="report-cta"><a href="#">Report</a></li>
-                        </ul>
+                        <?php
+                            if(isset($_SESSION["userId"])) 
+                            {
+                        ?>
+                            <ul class="primary-nav">
+                                <li><a href="homepage.php">Home</a></li>
+                                <li class="help"><a href="help.html">Help</a></li>
+                                <li><a href="#"><?php echo $_SESSION["username"]; ?></a></li>
+                                <li><a href="account_system/includes/logout.inc.php">Log Out</a></li> 
+                                <li class="report-cta"><a href="report_system/report.php">Report</a></li>
+                            </ul>
+                        <?php
+                            }
+                            else
+                            {
+                        ?>
+                            <ul class="primary-nav">
+                                <li><a href="homepage.php">Home</a></li>
+                                <li class="help"><a href="help.html">Help</a></li>
+                                <li><a href="account_system/signup.php">Sign Up</a></li>
+                                <li><a href="account_system/login.php">Log In</a></li>
+                                <li class="report-cta"><a href="report_system/report.php">Report</a></li>
+                            </ul>
+                        <?php
+                            }
+                        ?>
                     </nav>
                 </div>
             </div>
@@ -41,7 +66,7 @@
                         </p>
                         
                         <div class="hero-cta">
-                            <a href="#" class="primary-cta">REPORT</a>
+                            <a href="report_system/report.php" class="primary-cta">REPORT</a>
                         </div>
                     </div>
                     <img class="emergency-icon" src="assets/61-618382_family-near-me-hour-er-care-for-emergency.png" alt="icon">

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="css/accounts.css">
+    <link rel="stylesheet" href="../css/accounts.css">
 </head>
 <body>
     
@@ -25,7 +25,7 @@
                 <p>Password</p>
                 <input type="password" name="pwd" class="form-password" autofocus placeholder="Password">
                 <p>Repeat Password</p>
-                <input type="password" name="pwdrepeat" class="form-rptpassword" autofocus placeholder="Repeat Password">
+                <input type="password" name="pwdRepeat" class="form-rptpassword" autofocus placeholder="Repeat Password">
                 <div class="form-input-error"></div>
             </div>
 
@@ -47,14 +47,11 @@
                 else if ($_GET["error"] == "mismatchedpassword") {
                     echo "<p>Passwords don't match.</p>";
                 } 
-                else if ($_GET["error"] == "useristaken") {
+                else if ($_GET["error"] == "usernameistaken") {
                     echo "<p>Username taken.</p>";
                 } 
                 else if ($_GET["error"] == "stmtfailed") {
                     echo "<p>Something went wrong, try again.</p>";
-                } 
-                else if ($_GET["error"] == "none") {
-                    echo "<p>You have signed up!</p>";
                 } 
             }
         ?>

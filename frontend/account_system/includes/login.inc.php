@@ -2,21 +2,20 @@
 
 if (isset($_POST["submit"])) {
 
+    // Grabbing the data
     $username = $_POST["username"];
     $pwd = $_POST["pwd"];
 
-    require_once 'dbh.inc.php';
-    require_once 'functions.inc.php';
+    //Instantiate SignupContr class
+    require_once "../../dbh.php";
+    require_once '../classes/login.classes.php';
+    require_once '../classes/login-contr.classes.php';
+    $login = new LoginContr($username, $pwd);
 
-    // error handlers
-    if(emptyInputLogin($username, $pwd) !== false) {
-        header("location: ../login.php?error=emptyinput");
-        exit();
-    }
+    // Running error handlers and user login
+    $login->loginUser();
 
-    loginUser($conn, $username, $pwd);
-}
-else {
-    header("location: ../login.php");
+    // Going back to front page
+    header("location: ../../homepage.php?login=success");
     exit();
 }

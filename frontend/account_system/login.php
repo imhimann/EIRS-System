@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/accounts.css">
+    <link rel="stylesheet" href="../css/accounts.css">
     <title>Login</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
             <h1 class="form-title">Login</h1>
             <div class="form-message-error">Incorrect Username/Password</div>
             <div class="form-input-group">
-                <input type="email" name="username" class="form-email" autofocus placeholder="Username or email">
+                <input type="text" name="username" class="form-email" autofocus placeholder="Username or email">
                 <div class="form-input-error"></div>
             </div>
             <div class="form-input-password">
@@ -39,8 +39,11 @@
                 echo "<p>Fill in all fields.</p>";
             } 
             else if ($_GET["error"] == "falselogin") {
-                echo "<p>False login information.</p>";
+                echo "<p>Incorrect login information.</p>";
             } 
+            else if ($_GET["error"] == "usernotfound") {
+                echo "<p>User not found.</p>";
+            }  
         }
         ?>
 

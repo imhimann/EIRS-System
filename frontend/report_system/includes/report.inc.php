@@ -8,7 +8,7 @@ if (isset($_POST["submit"])) {
     $time = date("Y-m-d H:i:s");
     $status = "active";
 
-    require_once '../classes/dbh.classes.php';
+    require_once '../../dbh.php';
     require_once '../classes/report.classes.php';
     require_once '../classes/report-contr.classes.php';
     $report = new ReportContr($incident, $location, $description, $time, $status);
