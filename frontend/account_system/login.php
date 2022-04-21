@@ -9,7 +9,9 @@
 </head>
 <body>
 
-    <div class="wrapper"></div>
+
+    <div class="wrapper">
+    </div>
 
     <div class="container">
         <form action="includes/login.inc.php" method="post" id="login" class="form">

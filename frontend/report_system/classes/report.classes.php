@@ -2,7 +2,7 @@
 
 class Report extends Dbh {
 
-    //create report
+    //create report 
     protected function setReport($incident, $location, $description, $time, $status) {
         // prepare an sql statement to be queried
         $sql = "INSERT INTO reports (report_incident, report_location, report_description, 
