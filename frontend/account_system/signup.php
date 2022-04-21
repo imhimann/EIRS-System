@@ -33,6 +33,8 @@
 
         </form>
 
+        <a href="login.php" class="own-account">Already have an account? Log In</a>
+
         <?php
             if (isset($_GET["error"])) {
                 if ($_GET["error"] == "emptyinput") {
